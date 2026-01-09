@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "coinId": null,
+      "coinName": "LEL",
+      "symbol": "LEL",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 88,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0x5934328a86d267e8c83934a4f363075b4ce5b0bf",
+      "contractPlatform": "Ethereum",
+      "reportUrl": "https://dontraval.it.com/tokens/lel"
+    },
+    {
+      "coinId": null,
+      "coinName": "BNBW",
+      "symbol": "BNBW",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 87,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0xc33fc11b55465045b3f1684bde4c0aa5c5f40124",
+      "contractPlatform": "BSC",
+      "reportUrl": "https://dontraval.it.com/tokens/bnbw"
+    },
+    {
+      "coinId": null,
+      "coinName": "cDOGE",
+      "symbol": "cDOGE",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 86,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0xA7255C85232A42B5c602ed66c319dA9af8433bb3",
+      "contractPlatform": "BSC",
+      "reportUrl": "https://dontraval.it.com/tokens/cdoge"
+    },
+    {
+      "coinName": "NOT COIN",
+      "symbol": "NOT",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 85,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0x0027449bf0887ca3e431d263ffdefb244d95b555",
+      "contractPlatform": "Ethereum",
+      "reportUrl": "https://dontraval.it.com/tokens/notcoin"
+    },
+    {
+      "coinName": "BUSDB",
+      "symbol": "BUSDB",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 84,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0xd0cae3cb951f69695e31885f63b26f57a940a95e",
+      "contractPlatform": "BSC",
+      "reportUrl": "https://dontraval.it.com/tokens/busdb"
+    },
+    {
+      "coinName": "TOKENTWT",
+      "symbol": "TWT",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 83,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0x575B0339A30d5F29DcBC444AB28f2b194A5e2fa7",
+      "contractPlatform": "BSC",
+      "reportUrl": "https://dontraval.it.com/tokens/tokentwt"
+    },
+    {
+      "coinName": "BNBM",
+      "symbol": "BNBM",
+      "auditor": "AllenCryptoHub",
+      "auditStatus": 2,
+      "score": 82,
+      "auditTime": "2026-01-09T12:00:00Z",
+      "contractAddress": "0xe8d6eccf4df7067a52d43495c11b69deeedb965e",
+      "contractPlatform": "BSC",
+      "reportUrl": "https://dontraval.it.com/tokens/bnbm"
+    }
+  ]
+}
