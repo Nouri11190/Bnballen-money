@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dontraval Network</title>
+    <meta charset="UTF-8">
+    <title>Institutional Audit | MIP65 Compliance</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; }
+        .card { background: #1e1e1e; border: 1px solid #333; padding: 20px; border-radius: 8px; }
+        .status { color: #00ff88; font-weight: bold; }
+        .header { border-bottom: 2px solid #f0b90b; padding-bottom: 10px; margin-bottom: 20px; }
+    </style>
 </head>
 <body>
-  <h1>Dontraval Network</h1>
-  <p>Official project hub for Dontraval blockchain tokens.</p>
+    <div class="card">
+        <h1 class="header">Binance Listing Audit: bnballen-money</h1>
+        <p>Verification Status: <span id="status" class="status">Loading...</span></p>
+        <p>Audit ID: <span id="audit-id"></span></p>
+        <p>NFT Inventory: <span id="nft-total"></span> units (Series 1-5)</p>
+        <p>Settlement Hash: <span id="txid" style="font-size: 0.8em;"></span></p>
+    </div>
+
+    <script>
+        fetch('audit_data.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.entity_tier;
+                document.getElementById('audit-id').innerText = data.audit_id;
+                document.getElementById('nft-total').innerText = data.nft_audit.total_units;
+                document.getElementById('txid').innerText = data.compliance_ref;
+            });
+    </script>
 </body>
 </html>
