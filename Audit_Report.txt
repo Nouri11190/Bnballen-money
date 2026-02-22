@@ -1,0 +1,23 @@
+==================================================
+INSTITUTIONAL AUDIT REPORT - Sun Feb 22 23:24:36 WAT 2026
+ENTITY: dontraval.it.com
+PROJECT: bnballen-money (MIP65 Settlement)
+==================================================
+
+[ASSET VERIFICATION]
+- Primary Wallet: 0xdbc37874675e518ec0d3cd78b93b070471294e96
+- Asset Class: Moonitor NFT (Institutional Batch)
+- Total Units: 30,000 (5 Series x 6,000)
+- Settlement Tier: Corporate / Institutional (₦31,5M+ Pool)
+
+[INFRASTRUCTURE STATUS]
+- Domain: https://www.dontraval.it.com
+- Audit Endpoint: https://www.dontraval.it.com/audit_data.json
+- Hosting: Vercel Production Edge
+- Deployment ID: dpl_6orWKjrHoziK9qhEW6wnGmeZJJwZ
+
+[COMPLIANCE SUMMARY]
+This repository serves as the technical bridge for the 
+Listing Services Agreement. The MIP65 markers are 
+ratified via the live JSON metadata endpoint.
+==================================================

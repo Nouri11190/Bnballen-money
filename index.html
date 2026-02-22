@@ -20,7 +20,7 @@
     </div>
 
     <script>
-        fetch('audit_data.json')
+        fetch('/audit_data.json')
             .then(res => res.json())
             .then(data => {
                 document.getElementById('status').innerText = data.entity_tier;
