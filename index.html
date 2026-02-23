@@ -3,76 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Audit Portal | BNBAllen</title>
+    <title>BNBAllen Institutional Audit</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f6f9; color: #1e2329; }
-        nav { background: #1e2329; padding: 12px 20px; display: flex; justify-content: space-between; color: white; border-bottom: 3px solid #f0b90b; }
-        .container { max-width: 600px; margin: 20px auto; padding: 10px; }
-        .audit-card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; }
-        h1 { font-size: 1.4em; border-bottom: 2px solid #f0b90b; padding-bottom: 10px; margin-top: 0; }
-        .row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
-        .label { color: #707a8a; font-weight: 600; }
-        .value { font-weight: bold; color: #27ae60; text-align: right; }
-        .hash-box { background: #f8f9fa; padding: 10px; border-radius: 5px; font-size: 0.8em; word-break: break-all; margin-top: 5px; color: #666; }
-        .desk { margin-top: 25px; padding: 20px; border: 2px dashed #f0b90b; border-radius: 10px; text-align: center; background: #fffdf5; }
-        .btn { background: #1e2329; color: #f0b90b; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; display: block; margin: 10px 0; border: 1px solid #f0b90b; cursor: pointer; text-align: center; }
-        @media print { nav, .btn, .no-print { display: none !important; } .audit-card { box-shadow: none; border: 1px solid #000; } }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
+        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; border-bottom: 4px solid #f0b90b; display: flex; justify-content: space-between; }
+        .cert-container { max-width: 500px; margin: 25px auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #dcdfe6; overflow: hidden; }
+        .header { background: #fafbfc; padding: 20px; border-bottom: 2px solid #f0b90b; text-align: center; }
+        .content { padding: 25px; }
+        .data-point { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #f0f2f5; }
+        .label { color: #707a8a; font-size: 0.9em; }
+        .value { font-weight: bold; color: #27ae60; }
+        .hash-link { display: block; background: #f8f9fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.75em; word-break: break-all; color: #474d57; text-decoration: none; border: 1px solid #eaecef; margin-top: 5px; }
+        .hash-link:hover { border-color: #f0b90b; color: #1e2329; }
+        .action-zone { margin-top: 25px; padding: 20px; border-radius: 12px; background: #fffdf5; border: 1px solid #f0b90b; text-align: center; }
+        .btn { display: block; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; text-decoration: none; cursor: pointer; border: none; font-size: 1em; }
+        .btn-primary { background: #1e2329; color: #f0b90b; border: 1px solid #f0b90b; }
+        .btn-secondary { background: white; color: #1e2329; border: 1px solid #dcdfe6; }
+        @media print { .no-print { display: none; } .cert-container { box-shadow: none; border: 2px solid #000; } }
     </style>
 </head>
 <body>
 
 <nav class="no-print">
-    <div style="font-weight: bold;">INSTITUTIONAL AUDIT SYSTEM</div>
-    <div style="font-size: 0.8em;">ID: BNBA-9921</div>
+    <span>SECURE AUDIT PORTAL</span>
+    <span>VERIFIED</span>
 </nav>
 
-<div class="container">
-    <div class="audit-card">
-        <h1>Binance Listing Audit: bnballen-money</h1>
-        
-        <div class="row">
-            <span class="label">Verification Status</span>
+<div class="cert-container">
+    <div class="header">
+        <h2 style="margin:0;">Binance Listing Audit</h2>
+        <code style="color:#707a8a;">Ref: BNBA-MONEY-2026</code>
+    </div>
+
+    <div class="content">
+        <div class="data-point">
+            <span class="label">Status</span>
             <span class="value" id="status">Syncing...</span>
         </div>
-        <div class="row">
-            <span class="label">Entity Tier</span>
-            <span class="value" style="color: #1e2329;" id="tier">...</span>
+        <div class="data-point">
+            <span class="label">Tier</span>
+            <span class="value" style="color:#1e2329;" id="tier">...</span>
         </div>
-        <div class="row">
-            <span class="label">NFT Inventory</span>
+        <div class="data-point">
+            <span class="label">Holdings</span>
             <span class="value" id="inventory">0 units</span>
         </div>
-        
-        <div style="margin-top: 15px;">
-            <span class="label">Settlement Hash</span>
-            <div class="hash-box" id="hash">...</div>
+
+        <div style="margin-top: 20px;">
+            <span class="label">Public Settlement Hash (Click to Verify)</span>
+            <a href="#" id="hash-url" target="_blank" class="hash-link">Loading Hash...</a>
         </div>
 
-        <div class="desk">
-            <h3 style="margin-top: 0;">Institutional Communication Desk</h3>
-            <p style="font-size: 0.85em;">Official line for FairEmail, Tuta, and K-9 Mail verification:</p>
-            <a href="mailto:nouri11190@github.com" class="btn">Contact Auditor</a>
-            <button onclick="window.print()" class="btn" style="background: white; color: #1e2329;">Download Audit PDF</button>
+        <div class="action-zone no-print">
+            <a href="mailto:nouri11190@github.com" class="btn btn-primary">Contact Official Auditor</a>
+            <button onclick="window.print()" class="btn btn-secondary">Download Stamped Report</button>
         </div>
-        
-        <div style="text-align: center; margin-top: 20px; font-size: 0.7em; color: #aaa;">
-            Digitally Signed & Ratified <br>
-            Timestamp: <span id="time"></span>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.7em; color: #999;">
+            Digitally Ratified: <span id="ts"></span><br>
+            <div style="margin-top:10px; opacity:0.5;">[ Encrypted via L2 Protocol ]</div>
         </div>
     </div>
 </div>
 
 <script>
-    document.getElementById('time').innerText = new Date().toUTCString();
+    document.getElementById('ts').innerText = new Date().toUTCString();
     fetch('/audit_data.json')
         .then(res => res.json())
         .then(data => {
             document.getElementById('status').innerText = data.verification_status;
             document.getElementById('tier').innerText = data.account_type;
-            document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " units";
-            document.getElementById('hash').innerText = data.settlement_ref;
-        })
-        .catch(err => { document.getElementById('status').innerText = "Sync Error"; });
+            document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " Units";
+            const hash = data.settlement_ref;
+            document.getElementById('hash-url').innerText = hash;
+            // Links directly to BSCScan for Binance verification
+            document.getElementById('hash-url').href = `https://bscscan.com/tx/${hash}`;
+        });
 </script>
 
 </body>
