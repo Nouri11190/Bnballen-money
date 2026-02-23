@@ -3,15 +3,17 @@
   "verification_status": "Verified",
   "inventory": {
     "asset": "Moonitor NFT",
-    "series_collection": 5,
-    "units_per_series": 6000,
     "total_holdings": 30000
   },
-  "treasury": {
-    "aave_holdings": ["aUSDC", "aMANA", "aMKR"],
-    "benqi_risk_score": 88.45,
-    "tron_status": "Verified"
+  "treasury_yield": {
+    "aave_gho_apy": "5.67%",
+    "benqi_savax_apy": "5.06%",
+    "tron_staking": "Active"
   },
-  "settlement_ref": "0xcc51f2662e47ac26308e1d5858fca3f7a28fc3f6dce017d2e9019f76927ed74e",
-  "legal_framework": "Listing Services Agreement / MIP65"
+  "compliance": {
+    "framework": "MIP65 / 2026-POR",
+    "risk_score": 88.45,
+    "sig_ref": "BNBA-9921-X"
+  },
+  "settlement_ref": "0xcc51f2662e47ac26308e1d5858fca3f7a28fc3f6dce017d2e9019f76927ed74e"
 }

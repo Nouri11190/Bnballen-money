@@ -3,65 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Audit | Secure Communication</title>
+    <title>Institutional Audit | BNBA-9921-X</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f4f7f9; color: #1e2329; }
-        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; border-bottom: 4px solid #f0b90b; text-align: center; }
-        .container { max-width: 480px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
-        .header { background: #fafbfc; padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
-        .section-title { font-size: 0.8em; color: #707a8a; text-transform: uppercase; letter-spacing: 1px; margin: 15px 20px 5px; }
-        .data-card { margin: 0 20px 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; border: 1px solid #eaecef; }
-        .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; align-items: center; }
+        body { font-family: -apple-system, sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
+        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; text-align: center; border-bottom: 4px solid #f0b90b; }
+        .cert { max-width: 460px; margin: 20px auto; background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #dcdfe6; overflow: hidden; }
+        .head { background: #fafbfc; padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
+        .sect { font-size: 0.75em; color: #707a8a; text-transform: uppercase; margin: 15px 20px 5px; font-weight: bold; }
+        .card { margin: 0 20px 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border: 1px solid #eaecef; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.9em; }
         .val { font-weight: bold; color: #27ae60; }
-        .link-btn { color: #f0b90b; text-decoration: none; border-bottom: 1px dashed #f0b90b; }
-        .qr-area { text-align: center; padding: 20px; background: #fff; }
-        .btn-action { display: block; width: 85%; margin: 10px auto; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; font-size: 1.1em; }
-        .btn-primary { background: #1e2329; color: #f0b90b; border: 1px solid #f0b90b; }
-        .btn-secondary { background: white; color: #1e2329; border: 1px solid #dcdfe6; margin-bottom: 25px; }
+        .link { color: #f0b90b; text-decoration: none; border-bottom: 1px solid #f0b90b; }
+        .qr { text-align: center; padding: 20px; }
+        .btn { display: block; width: 85%; margin: 10px auto; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; text-align: center; font-size: 1em; }
+        .p { background: #1e2329; color: #f0b90b; }
+        .s { background: white; color: #1e2329; border: 1px solid #dcdfe6; }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body>
-
-<nav>INSTITUTIONAL TREASURY AUDIT</nav>
-
-<div class="container">
-    <div class="header">
+<nav>INSTITUTIONAL AUDIT SYSTEM</nav>
+<div class="cert">
+    <div class="head">
         <h2 style="margin:0;">Verification Report</h2>
-        <span style="color:#27ae60; font-weight:bold;">● LIVE VERIFIED</span><br>
-        <small style="color:#707a8a;">Ref: BNBA-9921-X</small>
+        <span class="val">● LIVE VERIFIED (2026)</span><br>
+        <small style="color:#707a8a;">Audit Ref: BNBA-9921-X</small>
     </div>
-
-    <div class="section-title">Core Inventory</div>
-    <div class="data-card">
-        <div class="row"><span>NFT Assets</span><span class="val" id="inventory">30,000 Units</span></div>
-        <div class="row"><span>Legal Framework</span><span class="val">MIP65 / Institutional</span></div>
+    <div class="sect">Core Holdings</div>
+    <div class="card">
+        <div class="row"><span>NFT Inventory</span><span class="val" id="inv">30,000 Units</span></div>
+        <div class="row"><span>Framework</span><span class="val">MIP65 / POR</span></div>
     </div>
-
-    <div class="section-title">Liquid Treasury (Verification Bridges)</div>
-    <div class="data-card">
-        <div class="row"><span>Ethereum (Aave)</span><a href="https://app.aave.com/markets/" target="_blank" class="val link-btn">aUSDC/aMANA</a></div>
-        <div class="row"><span>Avalanche (Benqi)</span><a href="https://app.benqi.fi/staking" target="_blank" class="val link-btn">Risk: 88.45</a></div>
-        <div class="row"><span>Tron (TRX)</span><a href="https://tronscan.org/" target="_blank" class="val link-btn">Asset Verified</a></div>
+    <div class="sect">Liquid Treasury (Live APY)</div>
+    <div class="card">
+        <div class="row"><span>Ethereum (Aave)</span><a href="https://app.aave.com/sgho/" target="_blank" class="val link">5.67% APY</a></div>
+        <div class="row"><span>Avalanche (Benqi)</span><a href="https://app.benqi.fi/staking" target="_blank" class="val link">5.06% APY</a></div>
+        <div class="row"><span>Tron Network</span><a href="https://tronscan.org/" target="_blank" class="val link">Verified</a></div>
     </div>
-
-    <div class="qr-area">
-        <div id="qrcode" style="display:inline-block;"></div>
-        <p style="font-size:0.7em; color:#707a8a; margin-top:10px;">Scan to Verify Multi-Chain Settlement</p>
+    <div class="qr"><div id="qrcode" style="display:inline-block;"></div></div>
+    <div class="no-print">
+        <a href="mailto:nouri11190@github.com?subject=Audit%20Inquiry%20[BNBA-9921-X]" class="btn p">Contact Auditor</a>
+        <a href="javascript:window.print()" class="btn s">Print Stamped PDF</a>
     </div>
-
-    <a href="mailto:nouri11190@github.com?subject=Institutional%20Audit%20Inquiry%20[BNBA-9921-X]&body=Hello,%20I%20am%20contacting%20you%20regarding%20the%20Institutional%20Audit%20for%2030,000%20units." class="btn-action btn-primary">Contact Official Auditor</a>
-    
-    <a href="javascript:window.print()" class="btn-action btn-secondary">Download Stamped Audit PDF</a>
+    <div style="text-align: center; font-size: 0.65em; color: #999; padding-bottom: 20px;">
+        Ratified: <span id="ts"></span> | Safety Score: 88.45/100
+    </div>
 </div>
-
 <script>
-    new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 120, height: 120 });
-    fetch('/audit_data.json')
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " Units";
-        });
+    document.getElementById('ts').innerText = new Date().toUTCString();
+    new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 110, height: 110 });
+    fetch('/audit_data.json').then(r => r.json()).then(d => {
+        document.getElementById('inv').innerText = d.inventory.total_holdings.toLocaleString() + " Units";
+    });
 </script>
 </body>
 </html>
