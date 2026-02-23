@@ -11,30 +11,29 @@
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1 class="header">Binance Listing Audit: bnballen-money</h1>
-        <p>Verification Status: <span id="status" class="status">Loading...</span></p>
-        <p>Audit ID: <span id="audit-id"></span></p>
-        <p>NFT Inventory: <span id="nft-total"></span> units (Series 1-5)</p>
-        <p>Settlement Hash: <span id="txid" style="font-size: 0.8em;"></span></p>
-   <body>
+    <h1>Binance Listing Audit: bnballen-money</h1>
+    <p>Verification Status: <span id="status">Loading...</span></p>
+    <p>Audit ID: <span id="audit-id">...</span></p>
+    <p>NFT Inventory: <span id="nft-total">0</span> units (Series 1-5)</p>
+    <p>Settlement Hash: <span id="txid">...</span></p>
 
-<script>
-    // Fetch the data from the relative path
-    fetch('/audit_data.json')
-        .then(res => {
-            if (!res.ok) throw new Error('Data not found');
-            return res.json();
-        })
-        .then(data => {
-            // Mapping the new JSON fields you shared
-            document.getElementById('status').innerText = data.account_type; 
-            document.getElementById('audit-id').innerText = data.verification_status;
-            document.getElementById('nft-total').innerText = data.inventory.total_holdings;
-            document.getElementById('txid').innerText = data.settlement_ref;
-        })
-        .catch(err => {
-            document.getElementById('status').innerText = "Sync Error - Check Logs";
-            console.error(err);
-        });
-</script>
+    <script>
+        fetch('/audit_data.json')
+            .then(res => {
+                if (!res.ok) throw new Error('File not found');
+                return res.json();
+            })
+            .then(data => {
+                // These names match your JSON keys exactly
+                document.getElementById('status').innerText = data.verification_status;
+                document.getElementById('audit-id').innerText = data.account_type;
+                document.getElementById('nft-total').innerText = data.inventory.total_holdings;
+                document.getElementById('txid').innerText = data.settlement_ref;
+            })
+            .catch(err => {
+                document.getElementById('status').innerText = "Sync Error - Refresh Page";
+                console.error(err);
+            });
+    </script>
+</body>
+
