@@ -12,8 +12,9 @@
         .header { background: #fafbfc; padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
         .section-title { font-size: 0.8em; color: #707a8a; text-transform: uppercase; letter-spacing: 1px; margin: 15px 20px 5px; }
         .data-card { margin: 0 20px 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; border: 1px solid #eaecef; }
-        .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; align-items: center; }
         .val { font-weight: bold; color: #27ae60; }
+        .link-btn { color: #f0b90b; text-decoration: none; border-bottom: 1px dashed #f0b90b; }
         .qr-area { text-align: center; padding: 20px; background: #fff; }
         .btn-print { display: block; width: 80%; margin: 10px auto 20px; padding: 12px; background: #1e2329; color: #f0b90b; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
     </style>
@@ -34,11 +35,20 @@
         <div class="row"><span>Legal Framework</span><span class="val">MIP65 / Institutional</span></div>
     </div>
 
-    <div class="section-title">Liquid Treasury (DeFi)</div>
+    <div class="section-title">Liquid Treasury (Verification Bridges)</div>
     <div class="data-card">
-        <div class="row"><span>Ethereum (Aave)</span><span class="val">aUSDC / aMANA Active</span></div>
-        <div class="row"><span>Avalanche (Benqi)</span><span class="val">Staking (Risk: 88.45)</span></div>
-        <div class="row"><span>Tron (TRX)</span><span class="val">Asset Verified</span></div>
+        <div class="row">
+            <span>Ethereum (Aave)</span>
+            <a href="https://app.aave.com/markets/?marketName=proto_mainnet_v3" target="_blank" class="val link-btn">aUSDC/aMANA</a>
+        </div>
+        <div class="row">
+            <span>Avalanche (Benqi)</span>
+            <a href="https://app.benqi.fi/staking" target="_blank" class="val link-btn">Risk: 88.45</a>
+        </div>
+        <div class="row">
+            <span>Tron (TRX)</span>
+            <a href="https://tronscan.org/" target="_blank" class="val link-btn">Asset Verified</a>
+        </div>
     </div>
 
     <div class="qr-area">
