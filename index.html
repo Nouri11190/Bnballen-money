@@ -1,38 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Institutional Audit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Audit Portal | BNBAllen</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
-        .audit-box { border: 2px solid #f0b90b; padding: 15px; border-radius: 10px; }
-        .highlight { font-weight: bold; color: #27ae60; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f6f9; color: #1e2329; }
+        nav { background: #1e2329; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; color: white; border-bottom: 3px solid #f0b90b; }
+        .search-bar { padding: 8px; border-radius: 4px; border: 1px solid #444; background: #2b3139; color: white; width: 180px; font-size: 0.8em; }
+        .container { max-width: 800px; margin: 30px auto; padding: 20px; }
+        .audit-box { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { margin-top: 0; font-size: 1.5em; border-bottom: 2px solid #f0b90b; padding-bottom: 10px; }
+        .data-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .label { font-weight: 600; color: #707a8a; }
+        .value { font-family: monospace; font-weight: bold; color: #27ae60; }
+        .contact-section { margin-top: 30px; padding: 20px; background: #fdfaf0; border-radius: 8px; border: 1px dashed #f0b90b; text-align: center; }
+        .btn-mail { background: #1e2329; color: #f0b90b; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 10px; border: 1px solid #f0b90b; }
+        .btn-mail:hover { background: #f0b90b; color: #1e2329; }
+        small { word-break: break-all; color: #999; }
     </style>
 </head>
 <body>
-    <div class="audit-box">
-        <h1>Binance Listing Audit: bnballen-money</h1>
-        <p>Verification Status: <span id="status" class="highlight">Syncing...</span></p>
-        <p>Entity Tier: <span id="tier">...</span></p>
-        <p>NFT Inventory: <span id="inventory" class="highlight">0</span> units (Series 1-5)</p>
-        <p>Settlement Hash: <small><span id="hash">...</span></small></p>
+
+    <nav>
+        <div style="letter-spacing: 1px; font-size: 0.9em;">INSTITUTIONAL AUDIT SYSTEM</div>
+        <input type="text" class="search-bar" placeholder="Enter Asset ID...">
+    </nav>
+
+    <div class="container">
+        <div class="audit-box">
+            <h1>Binance Listing Audit: bnballen-money</h1>
+            
+            <div class="data-row">
+                <span class="label">Verification Status</span>
+                <span class="value" id="status">Connecting...</span>
+            </div>
+            <div class="data-row">
+                <span class="label">Entity Tier</span>
+                <span class="value" style="color: #1e2329;" id="tier">...</span>
+            </div>
+            <div class="data-row">
+                <span class="label">NFT Inventory</span>
+                <span class="value" id="inventory">0</span>
+            </div>
+            <div style="padding: 12px 0;">
+                <span class="label">Settlement Hash</span><br>
+                <small id="hash">...</small>
+            </div>
+
+            <div class="contact-section">
+                <h3 style="margin-top: 0;">Institutional Communication Desk</h3>
+                <p style="font-size: 0.9em;">Direct line for FairEmail, Tuta, and K-9 Mail verification:</p>
+                <a href="mailto:nouri11190@github.com" class="btn-mail">Contact Auditor</a>
+            </div>
+        </div>
     </div>
 
     <script>
         fetch('/audit_data.json')
-            .then(response => {
-                if (!response.ok) throw new Error('Data file missing');
-                return response.json();
+            .then(res => {
+                if (!res.ok) throw new Error('Data Source Offline');
+                return res.json();
             })
             .then(data => {
-                // These MUST match your JSON keys exactly
                 document.getElementById('status').innerText = data.verification_status;
                 document.getElementById('tier').innerText = data.account_type;
-                document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString();
+                document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " units";
                 document.getElementById('hash').innerText = data.settlement_ref;
             })
-            .catch(error => {
-                document.getElementById('status').innerText = "Sync Error - Check JSON Path";
-                console.error('Audit Error:', error);
+            .catch(err => {
+                document.getElementById('status').innerText = "Sync Error";
+                console.error(err);
             });
     </script>
 </body>
