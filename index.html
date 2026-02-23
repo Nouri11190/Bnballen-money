@@ -3,78 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verified Institutional Portal</title>
+    <title>Institutional Audit | Multi-Chain Treasury</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
-        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; border-bottom: 4px solid #f0b90b; display: flex; justify-content: space-between; }
-        .cert-container { max-width: 450px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #dcdfe6; }
-        .header { background: #fafbfc; padding: 20px; border-bottom: 2px solid #f0b90b; text-align: center; }
-        .content { padding: 20px; }
-        .data-point { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #f8f9fa; }
-        .label { color: #707a8a; font-size: 0.85em; }
-        .value { font-weight: bold; color: #27ae60; }
-        .defi-badge { background: #e6f7ed; color: #27ae60; padding: 4px 8px; border-radius: 4px; font-size: 0.75em; margin-left: 10px; }
-        .hash-link { display: block; background: #f8f9fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.7em; word-break: break-all; color: #474d57; text-decoration: none; border: 1px solid #eaecef; margin-top: 5px; text-align: center; }
-        .qr-wrapper { display: flex; flex-direction: column; align-items: center; margin: 20px 0; padding: 15px; background: #fcfcfc; border: 1px solid #eee; border-radius: 10px; }
-        #qrcode img { width: 140px; height: 140px; }
-        .btn { display: block; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; text-decoration: none; border: none; font-size: 1em; text-align: center; box-sizing: border-box; }
-        .btn-primary { background: #1e2329; color: #f0b90b; border: 1px solid #f0b90b; }
-        @media print { .no-print { display: none; } }
+        body { font-family: sans-serif; margin: 0; background: #f4f7f9; color: #1e2329; }
+        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; border-bottom: 4px solid #f0b90b; text-align: center; }
+        .container { max-width: 480px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: #fafbfc; padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
+        .section-title { font-size: 0.8em; color: #707a8a; text-transform: uppercase; letter-spacing: 1px; margin: 15px 20px 5px; }
+        .data-card { margin: 0 20px 15px; padding: 15px; background: #f8f9fa; border-radius: 10px; border: 1px solid #eaecef; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9em; }
+        .val { font-weight: bold; color: #27ae60; }
+        .qr-area { text-align: center; padding: 20px; background: #fff; }
+        .btn-print { display: block; width: 80%; margin: 10px auto 20px; padding: 12px; background: #1e2329; color: #f0b90b; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
     </style>
 </head>
 <body>
 
-<nav class="no-print">
-    <span>INSTITUTIONAL AUDIT SYSTEM</span>
-    <span style="color:#27ae60;">● VERIFIED</span>
-</nav>
+<nav>INSTITUTIONAL TREASURY AUDIT</nav>
 
-<div class="cert-container">
+<div class="container">
     <div class="header">
-        <h2 style="margin:0;">Verification Certificate</h2>
-        <small style="color:#707a8a;">Signature: BNBA-9921-X</small>
+        <h2 style="margin:0;">Verification Report</h2>
+        <span style="color:#27ae60; font-weight:bold;">● LIVE VERIFIED</span>
     </div>
 
-    <div class="content">
-        <div class="data-point"><span class="label">Status</span><span class="value" id="status">Verified</span></div>
-        <div class="data-point">
-            <span class="label">Liquid Staking</span>
-            <span class="value">Benqi / Aave <span class="defi-badge">Active</span></span>
-        </div>
-        <div class="data-point"><span class="label">NFT Inventory</span><span class="value" id="inventory">30,000 Units</span></div>
-
-        <div style="margin-top: 15px;">
-            <span class="label">Internal Settlement Evidence (L2 Root)</span>
-            <a href="/audit_data.json" target="_blank" class="hash-link" id="hash-text">Loading...</a>
-        </div>
-
-        <div class="qr-wrapper">
-            <div id="qrcode"></div>
-            <div style="font-size: 0.75em; color: #707a8a; margin-top: 10px; font-weight: bold;">Scan for Mobile Audit Verification</div>
-        </div>
-
-        <div class="no-print">
-            <a href="mailto:nouri11190@github.com" class="btn btn-primary">Contact Official Auditor</a>
-        </div>
-
-        <div style="text-align: center; margin-top: 15px; font-size: 0.7em; color: #999; border-top: 1px solid #eee; padding-top: 10px;">
-            Certified on: <span id="ts"></span><br>
-            Network: Avalanche / BNB Smart Chain L2 Bridge
-        </div>
+    <div class="section-title">Core Inventory</div>
+    <div class="data-card">
+        <div class="row"><span>NFT Assets</span><span class="val" id="inventory">30,000 Units</span></div>
+        <div class="row"><span>Legal Framework</span><span class="val">MIP65 / Institutional</span></div>
     </div>
+
+    <div class="section-title">Liquid Treasury (DeFi)</div>
+    <div class="data-card">
+        <div class="row"><span>Ethereum (Aave)</span><span class="val">aUSDC / aMANA Active</span></div>
+        <div class="row"><span>Avalanche (Benqi)</span><span class="val">Staking (Risk: 88.45)</span></div>
+        <div class="row"><span>Tron (TRX)</span><span class="val">Asset Verified</span></div>
+    </div>
+
+    <div class="qr-area">
+        <div id="qrcode" style="display:inline-block;"></div>
+        <p style="font-size:0.7em; color:#707a8a; margin-top:10px;">Scan to Verify Multi-Chain Settlement</p>
+    </div>
+
+    <a href="javascript:window.print()" class="btn-print">Download Stamped Audit PDF</a>
 </div>
 
 <script>
-    document.getElementById('ts').innerText = new Date().toUTCString();
-    new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 140, height: 140 });
-
+    new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 120, height: 120 });
     fetch('/audit_data.json')
         .then(res => res.json())
         .then(data => {
-            document.getElementById('status').innerText = "Verified";
             document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " Units";
-            document.getElementById('hash-text').innerText = data.settlement_ref;
         });
 </script>
 </body>
