@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Audit Portal</title>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <title>Institutional Audit Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
+        body { font-family: sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
         nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; border-bottom: 4px solid #f0b90b; display: flex; justify-content: space-between; }
-        .cert-container { max-width: 500px; margin: 25px auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #dcdfe6; position: relative; }
-        .security-seal { position: absolute; top: 10px; right: 10px; width: 60px; opacity: 0.8; }
+        .cert-container { max-width: 450px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #dcdfe6; }
         .header { background: #fafbfc; padding: 20px; border-bottom: 2px solid #f0b90b; text-align: center; }
-        .content { padding: 25px; }
-        .data-point { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #f0f2f5; }
-        .label { color: #707a8a; font-size: 0.9em; }
+        .content { padding: 20px; }
+        .data-point { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 1px solid #f8f9fa; }
+        .label { color: #707a8a; font-size: 0.85em; }
         .value { font-weight: bold; color: #27ae60; }
-        .hash-link { display: block; background: #f8f9fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.75em; word-break: break-all; color: #474d57; text-decoration: none; border: 1px solid #eaecef; margin-top: 5px; text-align: center; }
-        .qr-zone { text-align: center; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px; }
-        #qrcode canvas { width: 120px !important; height: 120px !important; }
-        .action-zone { margin-top: 20px; }
-        .btn { display: block; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; text-decoration: none; cursor: pointer; border: none; font-size: 1em; text-align: center; }
+        .hash-link { display: block; background: #f8f9fa; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.7em; word-break: break-all; color: #474d57; text-decoration: none; border: 1px solid #eaecef; margin-top: 5px; text-align: center; }
+        .qr-wrapper { display: flex; flex-direction: column; align-items: center; margin: 20px 0; padding: 15px; background: #fcfcfc; border: 1px solid #eee; border-radius: 10px; }
+        #qrcode img { width: 140px; height: 140px; }
+        .btn { display: block; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; text-decoration: none; border: none; font-size: 1em; text-align: center; box-sizing: border-box; cursor: pointer; }
         .btn-primary { background: #1e2329; color: #f0b90b; border: 1px solid #f0b90b; }
         .btn-secondary { background: white; color: #1e2329; border: 1px solid #dcdfe6; }
-        @media print { .no-print { display: none; } .cert-container { box-shadow: none; border: 2px solid #000; margin: 0; width: 100%; } }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body>
 
 <nav class="no-print">
     <span>SECURE AUDIT PORTAL</span>
-    <span id="nav-status">VERIFIED</span>
+    <span style="color:#27ae60;">● LIVE</span>
 </nav>
 
 <div class="cert-container">
@@ -39,35 +37,26 @@
     </div>
 
     <div class="content">
-        <div class="data-point">
-            <span class="label">Tier</span>
-            <span class="value" style="color:#1e2329;" id="tier">...</span>
-        </div>
-        <div class="data-point">
-            <span class="label">NFT Inventory</span>
-            <span class="value" id="inventory">0 units</span>
-        </div>
-        <div class="data-point">
-            <span class="label">Status</span>
-            <span class="value" id="status">Syncing...</span>
-        </div>
+        <div class="data-point"><span class="label">Tier</span><span class="value" style="color:#1e2329;" id="tier">...</span></div>
+        <div class="data-point"><span class="label">NFT Inventory</span><span class="value" id="inventory">0 units</span></div>
+        <div class="data-point"><span class="label">Status</span><span class="value" id="status">Syncing...</span></div>
 
         <div style="margin-top: 15px;">
-            <span class="label">Blockchain Settlement Evidence</span>
-            <a href="#" id="hash-url" target="_blank" class="hash-link">Loading Evidence...</a>
+            <span class="label">Internal Settlement Evidence (Data Root)</span>
+            <a href="/audit_data.json" target="_blank" class="hash-link" id="hash-text">Loading Evidence...</a>
         </div>
 
-        <div class="qr-zone">
+        <div class="qr-wrapper">
             <div id="qrcode"></div>
-            <div style="font-size: 0.7em; color: #707a8a; margin-top: 8px;">Scan to Verify on Mobile</div>
+            <div style="font-size: 0.75em; color: #707a8a; margin-top: 10px; font-weight: bold;">Scan for Mobile Verification</div>
         </div>
 
-        <div class="action-zone no-print">
+        <div class="no-print">
             <a href="mailto:nouri11190@github.com" class="btn btn-primary">Contact Official Auditor</a>
             <button onclick="window.print()" class="btn btn-secondary">Print Stamped Copy</button>
         </div>
 
-        <div style="text-align: center; margin-top: 15px; font-size: 0.7em; color: #999; border-top: 1px solid #eee; padding-top: 15px;">
+        <div style="text-align: center; margin-top: 15px; font-size: 0.7em; color: #999; border-top: 1px solid #eee; padding-top: 10px;">
             Certified on: <span id="ts"></span><br>
             Validated via BNB Smart Chain L2 Protocol
         </div>
@@ -77,9 +66,11 @@
 <script>
     document.getElementById('ts').innerText = new Date().toUTCString();
     
-    // Generate QR Code for the current URL
-    QRCode.toCanvas(document.getElementById('qrcode'), window.location.href, function (error) {
-        if (error) console.error(error);
+    // Generate QR Code targeting the live URL
+    new QRCode(document.getElementById("qrcode"), {
+        text: window.location.href,
+        width: 140,
+        height: 140
     });
 
     fetch('/audit_data.json')
@@ -88,14 +79,7 @@
             document.getElementById('status').innerText = data.verification_status;
             document.getElementById('tier').innerText = data.account_type;
             document.getElementById('inventory').innerText = data.inventory.total_holdings.toLocaleString() + " Units";
-            
-            const hash = data.settlement_ref;
-            document.getElementById('hash-url').innerText = hash;
-            // Using a generic Blockscan bridge to improve hit rates
-            document.getElementById('hash-url').href = `https://blockscan.com/tx/${hash}`;
-        })
-        .catch(err => {
-            document.getElementById('status').innerText = "Offline Mode";
+            document.getElementById('hash-text').innerText = data.settlement_ref;
         });
 </script>
 
