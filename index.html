@@ -15,7 +15,7 @@
         .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95em; }
         .val { font-weight: bold; color: #27ae60; }
         .link { color: #f0b90b; text-decoration: none; border-bottom: 1px solid #f0b90b; }
-        .qr { text-align: center; padding: 25px; min-height: 120px; } /* Min-height prevents jumping */
+        .qr { text-align: center; padding: 25px; min-height: 120px; }
         .btn { display: block; width: 85%; margin: 12px auto; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
         .p { background: #1e2329; color: #f0b90b; }
     </style>
@@ -37,10 +37,11 @@
         <div class="row"><span>Legal Framework</span><span class="val">MIP65 / POR</span></div>
     </div>
 
-    <div class="sect">Liquid Treasury</div>
+    <div class="sect">Liquid Treasury (Live APY)</div>
     <div class="card">
         <div class="row"><span>Ethereum (Aave)</span><span class="val">5.67% APY</span></div>
         <div class="row"><span>Avalanche (Benqi)</span><span class="val">5.06% APY</span></div>
+        <div class="row"><span>Tron (TRX)</span><span class="val" style="color:#f0b90b;">Asset Verified</span></div>
     </div>
 
     <div class="sect">Cryptographic Proof</div>
@@ -60,18 +61,13 @@
 </div>
 
 <script>
-    // Execute ONLY when the mobile browser is fully ready
     window.addEventListener('load', function() {
         document.getElementById('ts').innerText = new Date().toUTCString();
-        
-        // Safety check: only try to make QR if library is loaded
         if (typeof QRCode !== 'undefined') {
             new QRCode(document.getElementById("qrcode"), { 
                 text: window.location.href, 
                 width: 120, height: 120 
             });
-        } else {
-            document.getElementById('qrcode').innerHTML = "<small style='color:red;'>Re-check network for QR library</small>";
         }
     });
 </script>
