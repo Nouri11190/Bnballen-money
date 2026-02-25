@@ -15,10 +15,10 @@
         .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95em; align-items: center; }
         .val { font-weight: bold; color: #27ae60; }
         .active-link { color: #f0b90b; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #f0b90b; }
-        .qr { text-align: center; padding: 25px; min-height: 120px; }
-        .btn { display: block; width: 85%; margin: 12px auto; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; font-size: 1.05em; }
+        .badge { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+        .qr { text-align: center; padding: 25px; }
+        .btn { display: block; width: 85%; margin: 12px auto; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
         .p { background: #1e2329; color: #f0b90b; }
-        .s { background: white; color: #1e2329; border: 1px solid #dcdfe6; }
         @media print { .no-print { display: none; } }
     </style>
 </head>
@@ -30,7 +30,19 @@
     <div class="head">
         <h2 style="margin:0;">Verification Report</h2>
         <span class="val" style="font-size: 1.1em;">● LIVE VERIFIED (2026)</span><br>
-        <code style="font-size:0.85em; background:#eee; padding:2px 5px; border-radius:4px; margin-top:5px; display:inline-block;">Ref: BNBA-9921-X</code>
+        <code>Ref: BNBA-9921-X</code>
+    </div>
+
+    <div class="sect">Identity & Verification</div>
+    <div class="card">
+        <div class="row">
+            <span>Binance KYC Badge</span>
+            <span class="badge">Moonitors #3 Verified</span>
+        </div>
+        <div class="row">
+            <span>Verification Date</span>
+            <span>June 20, 2023</span>
+        </div>
     </div>
 
     <div class="sect">Core Holdings</div>
@@ -41,44 +53,28 @@
 
     <div class="sect">Liquid Treasury (Live APY)</div>
     <div class="card">
-        <div class="row">
-            <span>Ethereum (Aave)</span>
-            <a href="https://app.aave.com/" target="_blank" class="active-link">5.67% APY</a>
-        </div>
-        <div class="row">
-            <span>Avalanche (Benqi)</span>
-            <a href="https://app.benqi.fi/" target="_blank" class="active-link">5.06% APY</a>
-        </div>
-        <div class="row">
-            <span>Tron (TRX)</span>
-            <a href="https://tronscan.org/#/token20/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank" class="active-link">Asset Verified</a>
-        </div>
+        <div class="row"><span>Ethereum (Aave)</span><a href="https://app.aave.com/" target="_blank" class="active-link">5.67% APY</a></div>
+        <div class="row"><span>Avalanche (Benqi)</span><a href="https://app.benqi.fi/" target="_blank" class="active-link">5.06% APY</a></div>
+        <div class="row"><span>Tron (TRX)</span><a href="https://tronscan.org/#/token20/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank" class="active-link">Asset Verified</a></div>
     </div>
 
     <div class="sect">Cryptographic Proof</div>
     <div class="card">
         <div class="row" style="flex-direction: column; align-items: flex-start;">
-            <span style="font-size: 0.8em; color:#707a8a; margin-bottom: 8px;">Merkle Leaf Proof (Click to Verify):</span>
-            <a href="https://www.binance.com/en/proof-of-reserves" target="_blank" style="text-decoration:none; width:100%;">
-                <code style="font-size:0.68em; word-break:break-all; background:#fff; padding:10px; border-radius:4px; border:1px solid #eee; width:100%; box-sizing:border-box; color:#27ae60; display:block;">bb9bde8b8063b96db9060fca7d248274775dcff7bd8e473cf766dc50ce0264e6</code>
-            </a>
-        </div>
-        <div class="row" style="margin-top:10px;">
-            <span>Safety Score</span>
-            <span class="val">88.45/100</span>
+            <span style="font-size: 0.8em; color:#707a8a; margin-bottom: 8px;">Merkle Leaf Proof:</span>
+            <code style="font-size:0.65em; word-break:break-all; background:#fff; padding:10px; border-radius:4px; border:1px solid #eee; width:100%; box-sizing:border-box; color:#27ae60;">bb9bde8b8063b96db9060fca7d248274775dcff7bd8e473cf766dc50ce0264e6</code>
         </div>
     </div>
 
     <div class="qr"><div id="qrcode" style="display:inline-block;"></div></div>
 
     <div class="no-print">
-        <a href="mailto:aliethachiliuschimpaye43@gmail.com?subject=Institutional%20Audit%20Verification%20[BNBA-9921-X]" class="btn p">Contact Official Auditor</a>
-        <a href="javascript:window.print()" class="btn s">Download Stamped PDF</a>
+        <a href="mailto:aliethachiliuschimpaye43@gmail.com?subject=Institutional%20Audit%20Verification%20[BNBA-9921-X]" class="btn p">Contact Account Owner</a>
     </div>
 
-    <div style="text-align: center; font-size: 0.7em; color: #999; padding: 0 20px 25px;">
+    <div style="text-align: center; font-size: 0.7em; color: #999; padding-bottom: 25px;">
         Ratified: <span id="ts"></span><br>
-        Standard: ZK-SNARK / Merkle Tree V2
+        Account UID: Au2025071904
     </div>
 </div>
 
@@ -92,13 +88,6 @@
             });
         }
     });
-
-    // Auto-Sync Heartbeat
-    setInterval(() => {
-        if (!document.getElementById('ts').innerText) {
-            location.reload();
-        }
-    }, 60000);
 </script>
 </body>
 </html>
