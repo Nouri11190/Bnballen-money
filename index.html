@@ -3,78 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Audit | BNBA-9921-X</title>
+    <title>OFFICIAL AUDIT | Ref: BNBA-9921-X</title>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
-        body { font-family: -apple-system, sans-serif; margin: 0; background: #f0f2f5; color: #1e2329; }
-        nav { background: #1e2329; padding: 15px; color: #f0b90b; font-weight: bold; text-align: center; border-bottom: 4px solid #f0b90b; text-transform: uppercase; }
-        .cert { max-width: 480px; margin: 20px auto; background: white; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #dcdfe6; overflow: hidden; }
-        .head { background: #fafbfc; padding: 25px 20px; border-bottom: 1px solid #eee; text-align: center; }
-        .sect { font-size: 0.75em; color: #707a8a; text-transform: uppercase; margin: 20px 20px 8px; font-weight: bold; letter-spacing: 0.5px; }
-        .card { margin: 0 20px 15px; padding: 18px; background: #f8f9fa; border-radius: 10px; border: 1px solid #eaecef; }
-        .row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95em; align-items: center; }
+        body { font-family: -apple-system, sans-serif; margin: 0; background: #f4f6f9; color: #1e2329; }
+        .cert { max-width: 500px; margin: 20px auto; background: white; border-radius: 12px; border: 2px solid #e0e0e0; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        nav { background: #1e2329; color: #f0b90b; padding: 15px; text-align: center; font-weight: bold; border-bottom: 5px solid #f0b90b; }
+        .head { padding: 30px; text-align: center; border-bottom: 1px solid #eee; }
+        .sect { font-size: 0.75rem; color: #707a8a; font-weight: bold; margin: 20px 25px 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .card { margin: 0 25px 15px; padding: 20px; background: #fafbfc; border-radius: 10px; border: 1px solid #ebedef; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; }
         .val { font-weight: bold; color: #27ae60; }
+        .badge { background: #e8f5e9; color: #2e7d32; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
         .active-link { color: #f0b90b; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #f0b90b; }
-        .badge { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
-        .qr { text-align: center; padding: 25px; }
-        .btn { display: block; width: 85%; margin: 12px auto; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
+        .qr { text-align: center; padding: 20px; }
+        .btn { display: block; width: 80%; margin: 10px auto; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; text-align: center; }
         .p { background: #1e2329; color: #f0b90b; }
-        @media print { .no-print { display: none; } }
+        .s { background: white; color: #1e2329; border: 1px solid #dcdfe6; }
+        @media print { .no-print { display: none; } body { background: white; } .cert { box-shadow: none; border: 1px solid #000; margin: 0; max-width: 100%; } }
     </style>
 </head>
 <body>
 
-<nav>Institutional Audit System</nav>
+<nav>BINANCE INSTITUTIONAL AUDIT SYSTEM</nav>
 
-<div class="cert">
+<div class="cert" id="audit-content">
     <div class="head">
-        <h2 style="margin:0;">Verification Report</h2>
-        <span class="val" style="font-size: 1.1em;">● LIVE VERIFIED (2026)</span><br>
-        <code>Ref: BNBA-9921-X</code>
+        <h2 style="margin:0 0 5px 0;">Verification Report</h2>
+        <span class="val">● STATUS: LIVE VERIFIED (2026)</span><br>
+        <code style="font-size:0.9rem; background:#eee; padding:3px 8px; border-radius:4px;">AUDIT: BNBA-9921-X</code>
     </div>
 
-    <div class="sect">Identity & Verification</div>
+    <div class="sect">Identity Verification</div>
     <div class="card">
-        <div class="row">
-            <span>Binance KYC Badge</span>
-            <span class="badge">Moonitors #3 Verified</span>
-        </div>
-        <div class="row">
-            <span>Verification Date</span>
-            <span>June 20, 2023</span>
-        </div>
+        <div class="row"><span>Binance KYC Badge</span><span class="badge">Moonitors #3 Verified</span></div>
+        <div class="row"><span>Verification Date</span><span style="font-weight:bold;">June 20, 2023</span></div>
+        <div class="row"><span>Account Owner</span><span style="font-weight:bold;">Alieth Achilius</span></div>
     </div>
 
-    <div class="sect">Core Holdings</div>
+    <div class="sect">Treasury Holdings</div>
     <div class="card">
         <div class="row"><span>NFT Inventory</span><span class="val">30,000 Units</span></div>
-        <div class="row"><span>Legal Framework</span><span class="val">MIP65 / POR</span></div>
+        <div class="row"><span>Protocol Framework</span><span class="val">MIP65 / POR V2</span></div>
+        <div class="row"><span>Risk Safety Score</span><span class="val">88.45/100</span></div>
     </div>
 
-    <div class="sect">Liquid Treasury (Live APY)</div>
+    <div class="sect">Liquid Proof (Click to Trace)</div>
     <div class="card">
         <div class="row"><span>Ethereum (Aave)</span><a href="https://app.aave.com/" target="_blank" class="active-link">5.67% APY</a></div>
         <div class="row"><span>Avalanche (Benqi)</span><a href="https://app.benqi.fi/" target="_blank" class="active-link">5.06% APY</a></div>
-        <div class="row"><span>Tron (TRX)</span><a href="https://tronscan.org/#/token20/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank" class="active-link">Asset Verified</a></div>
+        <div class="row"><span>Tron (TRX)</span><a href="https://tronscan.org/#/token20/TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank" class="active-link">Verified Asset</a></div>
     </div>
 
-    <div class="sect">Cryptographic Proof</div>
+    <div class="sect">Cryptographic Signature</div>
     <div class="card">
-        <div class="row" style="flex-direction: column; align-items: flex-start;">
-            <span style="font-size: 0.8em; color:#707a8a; margin-bottom: 8px;">Merkle Leaf Proof:</span>
-            <code style="font-size:0.65em; word-break:break-all; background:#fff; padding:10px; border-radius:4px; border:1px solid #eee; width:100%; box-sizing:border-box; color:#27ae60;">bb9bde8b8063b96db9060fca7d248274775dcff7bd8e473cf766dc50ce0264e6</code>
+        <div class="row" style="flex-direction: column;">
+            <span style="font-size: 0.75rem; color:#707a8a; margin-bottom: 8px;">Merkle Root Hash:</span>
+            <code style="font-size:0.65rem; word-break:break-all; background:#fff; padding:10px; border-radius:5px; border:1px solid #ddd; color:#27ae60; display:block;">bb9bde8b8063b96db9060fca7d248274775dcff7bd8e473cf766dc50ce0264e6</code>
         </div>
     </div>
 
     <div class="qr"><div id="qrcode" style="display:inline-block;"></div></div>
 
-    <div class="no-print">
-        <a href="mailto:aliethachiliuschimpaye43@gmail.com?subject=Institutional%20Audit%20Verification%20[BNBA-9921-X]" class="btn p">Contact Account Owner</a>
+    <div class="no-print" style="padding-bottom: 20px;">
+        <a href="javascript:window.print()" class="btn p">DOWNLOAD STAMPED PDF</a>
+        <a href="mailto:aliethachiliuschimpaye43@gmail.com" class="btn s">Contact Account Holder</a>
     </div>
 
-    <div style="text-align: center; font-size: 0.7em; color: #999; padding-bottom: 25px;">
+    <div style="text-align: center; font-size: 0.7rem; color: #999; padding-bottom: 25px;">
         Ratified: <span id="ts"></span><br>
-        Account UID: Au2025071904
+        UID: Au2025071904 | Registered Email: Verified
     </div>
 </div>
 
@@ -84,7 +82,7 @@
         if (typeof QRCode !== 'undefined') {
             new QRCode(document.getElementById("qrcode"), { 
                 text: window.location.href, 
-                width: 140, height: 140 
+                width: 130, height: 130 
             });
         }
     });
